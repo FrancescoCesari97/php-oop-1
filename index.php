@@ -1,28 +1,10 @@
 <?php
 
 
-class Production 
-{
-    public $titolo;
-    public $lingua;
-    public $voto;
+require_once __DIR__ . "./Models/production.php";
 
+require_once __DIR__ . "./Models/troupe.php";
 
-    function __construct($titolo, $lingua, $voto)
-    {
-        $this->titolo = $titolo;
-        $this->lingua = $lingua;
-        $this->voto = $voto;
-    }
-
-    //* Metodo per recuperare il titolo
-    public function getTitolo()
-    {
-        return $this->titolo;
-    }
-
-
-}
 
 $amicimiei = new Production("Amici Miei", "Italiano", "8");
 // $amicimiei->titolo = "Amici Miei";
@@ -35,6 +17,12 @@ $heat = new Production("Heat", "Inglese", "7");
 // $heat->voto = "7";
 
 
+$lohobbit = new Production("lo Hobbit", "Inglese", "6");
+
+$troupe = new Troupe("", "", "");
+
 var_dump($amicimiei);
 
 var_dump($heat);
+
+var_dump($lohobbit);
