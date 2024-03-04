@@ -14,16 +14,18 @@ class Production
         string $titolo, 
         string $lingua, 
         string $voto,
-        // Troupe $troupe,
+        Troupe $troupe,
         )
     {
         $this->titolo = $titolo;
         $this->lingua = $lingua;
         $this->voto = $voto;
-        // $this->troupe = $troupe;
 
         // $this->nomination = $this->voto >= 8 ? true : false;
         $this->set_nomination();
+        
+        $this->troupe = $troupe;
+
     }
 
     //* Metodo per recuperare il titolo
