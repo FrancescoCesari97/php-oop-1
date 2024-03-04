@@ -1,45 +1,52 @@
 <?php
 
+require_once __DIR__ .  "./server.php"
 
-require_once __DIR__ . "./Models/production.php";
-
-require_once __DIR__ . "./Models/troupe.php";
-
-
-$amicimiei = new Production("Amici Miei",
- "Italiano",
-  "8",
-   new Troupe("Mario Monicelli", "Luigi Kuveiller", "Ruggero Mastroianni"));
-// $amicimiei->titolo = "Amici Miei";
-// $amicimiei->lingua = "Italiano";
-// $amicimiei->voto = "8";
-
-$heat = new Production("Heat",
- "Inglese",
-  "7",
-  new Troupe("Michael Mann", "Dante Spinotti", "Pasquale Buba"));
-// $heat->titolo = "Heat";
-// $heat->lingua = "Inglese";
-// $heat->voto = "7";
-
-
-$lohobbit = new Production(
-    "lo Hobbit",
-     "Inglese", 
-    "6",
-    new Troupe("Peter Jackson", "Andrew Lesnie", "Jabez Olssen"));
+?>
 
 
 
-$productions = [
-    $amicimiei,
-    $heat,
-    $lohobbit
-];
- 
 
-var_dump($amicimiei);
 
-var_dump($heat);
+<!DOCTYPE html>
+<html lang="en">
 
-var_dump($lohobbit);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 class="my-5">tabella Film</h1>
+
+        <table class="table">
+            <thead>
+                <th>titolo</th>
+                <th>lingua</th>
+                <th>voto</th>
+                <th>Regista</th>
+                <th>nomination</th>
+            </thead>
+            <tbody>
+                <?php foreach ($productions as $production): ?>
+                <tr>
+                    <td><?= $production->titolo ?></td>
+                    <td><?= $production->lingua ?></td>
+                    <td><?= $production->voto ?></td>
+                    <td><?= $production->troupe->director ?></td>
+                    <td><?= $production->nomination ? "yes" : "no"?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
