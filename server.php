@@ -7,6 +7,8 @@ require_once __DIR__ . "./Models/troupe.php";
 
 require_once __DIR__ . "./Models/serieTV.php";
 
+require_once __DIR__ . "./Models/movies.php";
+
 
 $serie_TV = new serieTV( 
 "Amici Miei",
@@ -17,8 +19,18 @@ $serie_TV = new serieTV(
    "Luigi Kuveiller",
    "Ruggero Mastroianni"
    ), 3);
+
+$movies = new movies( 
+"Amici Miei",
+"Italiano",
+8,
+    new Troupe(
+    "Mario Monicelli",
+    "Luigi Kuveiller",
+    "Ruggero Mastroianni"
+    ), 200, 120);   
    
-var_dump($serie_TV);
+var_dump($movies);
 
 exit;
 

@@ -2,22 +2,24 @@
 
 require_once __DIR__ . "/production.php";
 
-class serieTV extends Production
+class movies extends Production
 {
 
-    public $stagioni;
-
+    public $botteghino;
+    public $durata;
 
     function __construct(
         string $titolo, 
         string $lingua, 
         int $voto,
         Troupe $troupe,
-        int $stagioni
+        int $botteghino,
+        int $durata
     ) {
 
         parent::__construct($titolo, $lingua, $voto, $troupe,);
         
-        $this->stagioni = $stagioni;
+        $this->botteghino = $botteghino;
+        $this->durata = $durata;
     }
 }
