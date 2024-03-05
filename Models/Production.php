@@ -3,7 +3,7 @@
 
 class Production 
 {
-    public $titolo;
+    private $titolo;
     public $lingua;
     public $voto;
     public $troupe;
@@ -13,7 +13,7 @@ class Production
     function __construct(
         string $titolo, 
         string $lingua, 
-        string $voto,
+        int $voto,
         Troupe $troupe,
         )
     {
@@ -28,9 +28,20 @@ class Production
 
     }
 
-    //* Metodo per recuperare il titolo
+    //* Metodo per verificare il titolo
+    public function set_Titolo($titolo)
+    {
+        if (empty($titolo) || !is_string($titolo))
+        return;
+        
+        $this->titolo = ucfirst($titolo);
+    }
+
+    //* Metodo per stampareil titolo
+
     public function get_Titolo()
     {
+        
         return $this->titolo;
     }
 
@@ -48,5 +59,5 @@ class Production
     }
 
 
-
+ 
 }

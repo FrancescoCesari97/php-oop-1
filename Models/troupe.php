@@ -6,8 +6,7 @@ class Troupe {
     public $dop;
     public $editor;
 
-    function __construct
-    (
+    function __construct(
         string $director, 
         string $dop, 
         string $editor,

@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ .  "./server.php"
+require_once __DIR__ .  "./server.php";
 
 ?>
 
@@ -36,7 +36,7 @@ require_once __DIR__ .  "./server.php"
             <tbody>
                 <?php foreach ($productions as $production): ?>
                 <tr>
-                    <td><?= $production->titolo ?></td>
+                    <td><?= $production->get_Titolo() ?></td>
                     <td><?= $production->lingua ?></td>
                     <td><?= $production->voto ?></td>
                     <td><?= $production->troupe->director ?></td>
