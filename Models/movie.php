@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/production.php";
 
-class movies extends Production
+class movie extends Production
 {
 
     public $botteghino;

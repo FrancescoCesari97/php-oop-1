@@ -7,20 +7,20 @@ require_once __DIR__ . "./Models/troupe.php";
 
 require_once __DIR__ . "./Models/serieTV.php";
 
-require_once __DIR__ . "./Models/movies.php";
+require_once __DIR__ . "./Models/movie.php";
 
 
-$serie_TV = new serieTV( 
-"Amici Miei",
-"Italiano",
+$Twin_Peaks = new serieTV( 
+"Twin Peaks",
+"inglese",
  8,
   new Troupe(
-   "Mario Monicelli",
-   "Luigi Kuveiller",
-   "Ruggero Mastroianni"
-   ), 3);
+   "David Lynch",
+   "Frank Byers,",
+   " Mary Sweeney"
+   ), 2);
 
-$movies = new movies( 
+$amicimiei = new movie( 
 "Amici Miei",
 "Italiano",
 8,
@@ -30,24 +30,24 @@ $movies = new movies(
     "Ruggero Mastroianni"
     ), 200, 120);   
    
-var_dump($movies);
+var_dump($amicimiei);
 
-exit;
 
-$amicimiei = new Production(
- "Amici Miei",
- "Italiano",
-  8,
-   new Troupe(
-    "Mario Monicelli",
-    "Luigi Kuveiller",
-    "Ruggero Mastroianni"
-    ));
+
+// $amicimiei = new Production(
+//  "Amici Miei",
+//  "Italiano",
+//   8,
+//    new Troupe(
+//     "Mario Monicelli",
+//     "Luigi Kuveiller",
+//     "Ruggero Mastroianni"
+//     ));
 // $amicimiei->titolo = "Amici Miei";
 // $amicimiei->lingua = "Italiano";
 // $amicimiei->voto = "8";
 
-$heat = new Production(
+$heat = new movie(
  "Heat",
  "Inglese",
   7,
@@ -55,13 +55,13 @@ $heat = new Production(
     "Michael Mann",
     "Dante Spinotti",
     "Pasquale Buba"
-    ));
+    ), 300, 130);
 // $heat->titolo = "Heat";
 // $heat->lingua = "Inglese";
 // $heat->voto = "7";
 
 
-$lohobbit = new Production(
+$lohobbit = new movie(
     "lo Hobbit",
      "Inglese", 
     6,
@@ -69,7 +69,7 @@ $lohobbit = new Production(
         "Peter Jackson",
         "Andrew Lesnie",
         "Jabez Olssen"
-    ));
+    ), 270, 100);
 
 
     $lohobbit->set_Titolo("concerning hobbits");
@@ -78,6 +78,8 @@ $lohobbit = new Production(
 $productions = [
     $amicimiei,
     $heat,
-    $lohobbit
+    $lohobbit,
+    $Twin_Peaks
+
 ];
  

@@ -23,7 +23,7 @@ require_once __DIR__ .  "./server.php";
 
 <body>
     <div class="container text-center">
-        <h1 class="my-5">tabella Film</h1>
+        <h1 class="my-5">tabella Produzioni</h1>
 
         <table class="table">
             <thead>
@@ -32,6 +32,9 @@ require_once __DIR__ .  "./server.php";
                 <th>voto</th>
                 <th>Regista</th>
                 <th>nomination</th>
+                <th>durata</th>
+                <th>botteghino</th>
+                <th>stagioni</th>
             </thead>
             <tbody>
                 <?php foreach ($productions as $production): ?>
@@ -41,6 +44,12 @@ require_once __DIR__ .  "./server.php";
                     <td><?= $production->voto ?></td>
                     <td><?= $production->troupe->director ?></td>
                     <td><?= $production->nomination ? "yes" : "no"?></td>
+                    <?php if($production instanceof movie): ?>
+                    <td><?= $production->durata ?></td>
+                    <td><?= $production->botteghino ?></td>
+                    <?php elseif($production instanceof sereieTV): ?>
+                    <td><?= $production->stagioni ?></td>
+                    <?php endif; ?>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
