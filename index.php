@@ -19,7 +19,7 @@ require_once __DIR__ .  "./server.php";
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-</head>
+
 
 <body>
     <div class="container text-center">
@@ -47,7 +47,9 @@ require_once __DIR__ .  "./server.php";
                     <?php if($production instanceof movie): ?>
                     <td><?= $production->durata ?></td>
                     <td><?= $production->botteghino ?></td>
-                    <?php elseif($production instanceof sereieTV): ?>
+                    <?php elseif($production instanceof serieTV): ?>
+                    <td></td>
+                    <td></td>
                     <td><?= $production->stagioni ?></td>
                     <?php endif; ?>
                 </tr>
@@ -78,7 +80,7 @@ require_once __DIR__ .  "./server.php";
             <li>
                 <?= $production->botteghino ?>
             </li>
-            <?php elseif ($production instanceof sereieTV): ?>
+            <?php elseif ($production instanceof serieTV): ?>
             <li>
                 <?= $production->stagioni ?>
             </li>
