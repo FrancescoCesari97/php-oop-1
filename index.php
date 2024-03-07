@@ -54,6 +54,37 @@ require_once __DIR__ .  "./server.php";
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <?php foreach ($productions as $production): ?>
+        <ul>
+            <li>
+                <?= $production->get_Titolo() ?>
+            </li>
+            <li>
+                <?= $production->lingua ?>
+            </li>
+            <li>
+                <?= $production->voto ?>
+            </li>
+            <li>
+                <?= $production->troupe->director ?>
+            </li>
+            <li>
+                <?= $production->nomination ? "yes" : "no"?>
+            </li>
+            <?php if ($production instanceof movie): ?>
+            <li>
+                <?= $production->durata ?>
+            </li>
+            <li>
+                <?= $production->botteghino ?>
+            </li>
+            <?php elseif ($production instanceof sereieTV): ?>
+            <li>
+                <?= $production->stagioni ?>
+            </li>
+            <?php endif; ?>
+        </ul>
+        <?php endforeach; ?>
     </div>
 
 </body>
